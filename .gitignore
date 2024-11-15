@@ -1,5 +1,5 @@
-#CSV files
-*.csv
+#large CSV file
+creditcard.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
