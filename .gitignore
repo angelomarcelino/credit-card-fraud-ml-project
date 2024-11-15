@@ -1,5 +1,6 @@
 #large CSV file
-creditcard.csv
+dataset/creditcard.zip
+dataset/creditcard.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
