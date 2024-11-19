@@ -1,3 +1,4 @@
+import glob
 import zipfile
 import os
 import pandas as pd
@@ -7,7 +8,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.metrics import roc_auc_score
 
-#train parameters
+
+#constants
+DATASET_FOLDER_PATH ="../dataset/"
 ETA=0.3
 MAX_DEPTH=3
 MIN_CHILD_WEIGHT=1
@@ -47,22 +50,10 @@ def predict (df, dv, model):
     return y_pred_proba
     
 #data preparation
-print ('Reading data from csv file')
-zip_file = "../dataset/creditcard.zip"
-csv_file = "../dataset/creditcard.csv"
-if os.path.exists(csv_file):
-    print("The file creditcard.csv already exists. No need to unzip")
-else:
-    # Asegúrate de que el directorio de salida existe
-    output_dir = "../dataset/"
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-
-    with zipfile.ZipFile(zip_file, 'r') as zip_ref:
-        zip_ref.extractall(output_dir)  # Extraer en el directorio especificado
-
-    print("Unzip completed")
-df=pd.read_csv("../dataset/creditcard.csv")
+print ('Reading data from csv files')
+all_input_files = glob.glob(DATASET_FOLDER_PATH + "creditcard_part_*.csv")
+df_list = [pd.read_csv(file) for file in all_input_files]
+df = pd.concat(df_list, ignore_index=True)
 
 print ('Preparing data')
 df.columns = df.columns.str.lower()
