@@ -63,6 +63,8 @@ From the scripts folder, you can train the model by running:
 
 python train.py
 
+The model will be trained with the dataset provided by using the Gradient boosting model and its state will be serialized to the output file "xgboost_eta=0.3_depth=3_minchild=1_round=100.bin" in the /model folder
+
 7. Deploy the Model for Predictions:
 To deploy the model, use Gunicorn with the following command:
 

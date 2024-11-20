@@ -8,7 +8,7 @@ from flask import jsonify
 
 #constants
 INPUT_FILE = '../model/xgboost_eta=0.3_depth=3_minchild=1_round=100.bin'
-THRESHOLD = 0.51
+THRESHOLD = 0.7
 
 #global varialbes
 model=None
