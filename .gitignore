@@ -1,6 +1,12 @@
 #large CSV file
-dataset/creditcard.zip
 dataset/creditcard.csv
+
+# Ignore CSV lock files
+*.csv#
+
+# Ignore Vim swap files
+*.swp
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

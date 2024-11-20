@@ -30,6 +30,8 @@ Files inside folders:
   - predict.py: A script that implements the prediction logic using the trained model.
   - train.py: A script dedicated to training the model using the available dataset.
   
+- videos/: This folder contains a clip that shows an interaction with the service once deployed to AWS Elastic Beanstalk
+  
 # TRAINING AND USING THE MODEL FOR PREDICTIONS
 
 In order to train the model and make predictions, after cloning this repository to your local machine, you can set up a virtual environment as explained below.cd te
@@ -201,6 +203,8 @@ After deployment, retrieve the URL for the application by running:
 eb open
 
 This command will open a web browser with the base URL of the deployed application. Append /predict to the base URL to access the endpoint, which you can use in the predict-test.ipynb notebook to test the service.
+
+There is a clip in the videos folder that shows an interaction with the service deployed to AWS Elastic Beanstalk
 
 
 
