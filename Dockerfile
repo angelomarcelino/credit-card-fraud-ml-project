@@ -6,8 +6,6 @@ WORKDIR /app/scripts
 
 COPY ["Pipfile", "Pipfile.lock", "./"]
 
-RUN echo "nameserver 8.8.8.8" >> /etc/resolv.conf
-
 RUN pipenv install --system --deploy
 
 COPY ["./scripts/predict.py", "."]

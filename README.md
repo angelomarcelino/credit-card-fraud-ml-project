@@ -139,6 +139,13 @@ Use the following command to build the Docker image using the Dockerfile in the 
 docker build -t creditcardfraud .
 
 If you get a permission error while trying to build the image, use sudo to overcome the problem or add your user to the docker group
+In case the container can't resolves names, you can modify the configuration file, setting there the dns to be used. For example:
+
+{
+  "dns": ["8.8.4.4", "8.8.8.8"],
+  "ipv6": false
+}
+
 
 4. Run the Docker Container:
 Once the image is built, you can run the Docker container with the following command. This will bind the container’s port 5000 to the host’s port 5000:
